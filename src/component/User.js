@@ -10,9 +10,10 @@ class User extends Component {
   // or
   // User.defaultProps = {...}
 
-  state={
+  state = {
     isVisible: false,
-  }
+  };
+  // create state in constructor
   // constructor(props) {
   //   super(props);
   //   this.state = {
@@ -24,6 +25,16 @@ class User extends Component {
     departmant: "No Information 2",
     salary: "No Information 2",
   };
+
+  //  bind this  in constructor :
+  // constructor(props) {
+  //   super(props);
+  //   this.OnClickEvent=this.OnClickEvent.bind(this);
+  // }
+  OnClickEvent = (number, e) => {
+    console.log(number);
+    // console.log(e);
+  };
   render() {
     const { name, departmant, salary } = this.props;
     const { isVisible } = this.state;
@@ -31,7 +42,12 @@ class User extends Component {
       <div className="col-md-8 mb-4">
         <div className="card">
           <div className="card-header d-flex justify-content-between">
-            <h4 className="d-inline">{name}</h4>
+            <h4 className="d-inline" onClick={this.OnClickEvent.bind(this, 34)}>
+              {/* must be used bind although we create arrow function to send variable in OnClickEvent */}
+              {name}
+            </h4>
+            {/* bind : When we create functions, we have to bind like onClick example --> this.OnClickEvent.bind(this)
+            or can be used in a constructor. */}
             <i className="far fa-trash-alt" style={{ cursor: "pointer" }}></i>
           </div>
           {isVisible ? (
@@ -58,6 +74,7 @@ User.propTypes = {
   departmant: PropTypes.string.isRequired,
   salary: PropTypes.string.isRequired,
 };
+// create default props
 // User.defaultProps = {
 //   name: "No Information 1",
 //   departmant: "No Information 1",
