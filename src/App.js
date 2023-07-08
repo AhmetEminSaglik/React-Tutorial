@@ -1,31 +1,44 @@
 //import logo from './logo.svg';
 import "./App.css";
+import React, { Component } from "react";
 import Navbar from "./component/Navbar";
 import User from "./component/User";
-function App() {
-  return (
-    <div className="container">
-      <Navbar />
-      <hr />
-      {/*   <Navbar title="This is the title. It will taken as {props.title} in Navbar.js" />
-      <hr />
-       <Navbar title="if not send `title` to navbar then error will be seen in browser console." />
-      <hr />
-      <Navbar  />
-      <hr />
-      <Navbar  title ="if defaultProps is defined, then error wont be occrued if not sent any title like upper navbar"/>
-      <hr /> */}
-      <User
-        name="Ahmet Emin SAGLIK"
-        departmant="Java Developer"
-        salary="4500$"
-      />
-      <User name="AES " />
-      <User name="Omer AKKOCA" salary="5000$" departmant="Frontend Developer" />
-      {/* <h4 className="header"> App Component</h4>
-      <h4 style={{ color: "red", fontSize: "30px" }}> App Component</h4> */}
-    </div>
-  );
+import Users from "./component/Users";
+
+class App extends Component {
+  state = {
+    users: [
+      {
+        id: 1,
+        name: "Ahmet Emin SAGLIK",
+        departmant: "Java Developer",
+        salary: "4500$",
+      },
+      {
+        id: 2,
+        name: "Omer AKKOCA",
+        departmant: "Frontend Developer",
+        salary: "5000$",
+      },
+      {
+        id: 3,
+        name: "Omer Netbeans",
+        departmant: "Web Developer",
+        salary: "3750$",
+      },
+    ],
+  };
+  render() {
+    return (
+      <div className="container">
+        <Navbar title="User App" />
+        <hr />
+        2
+        <Users users={this.state.users} />
+        3
+      </div>
+    );
+  }
 }
 
 export default App;

@@ -6,8 +6,7 @@ const Navbar = (props) => {
   // this is function so props.title is good enough
   return (
     <div>
-      <h4>User App</h4>
-      <h5>{props.title}</h5>
+      <h4>{props.title}</h4>
     </div>
   );
 };
