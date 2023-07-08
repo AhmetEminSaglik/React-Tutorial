@@ -32,8 +32,8 @@ class User extends Component {
   //   this.OnClickEvent=this.OnClickEvent.bind(this);
   // }
   OnClickEvent = (number, e) => {
-    console.log(number);
-    // console.log(e);
+    this.setState({ isVisible: !this.state.isVisible });
+    console.log(e);
   };
   render() {
     const { name, departmant, salary } = this.props;
