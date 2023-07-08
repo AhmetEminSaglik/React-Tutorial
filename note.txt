@@ -2,3 +2,9 @@ npx create-react-app my-app : downloads the fundamentals for react app
 after finished all process of upper command, should go to folder in my-app
  as : cd my-app , and then  run the following command : 
  npm start
+
+
+
+ PROPS VS STATE : 
+ Props are used to pass data from a parent component to a child component,
+ while state is used to manage data within a component. Props are immutable and cannot be changed within a component, while state is mutable and can be updated using the setState function.
