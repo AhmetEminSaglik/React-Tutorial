@@ -1,0 +1,4 @@
+npx create-react-app my-app : downloads the fundamentals for react app
+after finished all process of upper command, should go to folder in my-app
+ as : cd my-app , and then  run the following command : 
+ npm start
