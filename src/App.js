@@ -2,7 +2,7 @@
 import "./App.css";
 import React, { Component } from "react";
 import Navbar from "./component/Navbar";
-import User from "./component/User";
+// import User from "./component/User";
 import Users from "./component/Users";
 
 class App extends Component {

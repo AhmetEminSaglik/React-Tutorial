@@ -53,3 +53,15 @@ const UserConsumer = UserContext.Consumer;
 
 export default UserConsumer;
 
+
+ -> Action : 
+ Process will be realized and items will be send is decided here.  has 2 properties :
+ Type : process will be realized
+ Payload : item will be send
+
+ 
+ -> Dispatch :
+ Send actions to context. Is located in Provider state.
+
+ -> Reducer : 
+ updates state according to Action type that is send with Dispatch  
