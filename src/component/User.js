@@ -6,24 +6,8 @@ class User extends Component {
   // this is class not function so here the props can be used as this.props
   //Destructing --> this prevents to add prefix for each variable as this.props
 
-  //static defaultProps = {...}
-  // or
-  // User.defaultProps = {...}
-
   state = {
     isVisible: false,
-  };
-  // create state in constructor
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-  //     isVisible: false,
-  //   };
-  // }
-  static defaultProps = {
-    name: "No Information 2",
-    departmant: "No Information 2",
-    salary: "No Information 2",
   };
 
   //  bind this  in constructor :
@@ -34,6 +18,10 @@ class User extends Component {
   OnClickEvent = (number, e) => {
     this.setState({ isVisible: !this.state.isVisible });
     console.log(e);
+  };
+  onDeleteUser = (e) => {
+    const { id, deleteUser } = this.props;
+    deleteUser(id);
   };
   render() {
     const { name, departmant, salary } = this.props;
@@ -48,7 +36,11 @@ class User extends Component {
             </h4>
             {/* bind : When we create functions, we have to bind like onClick example --> this.OnClickEvent.bind(this)
             or can be used in a constructor. */}
-            <i className="far fa-trash-alt" style={{ cursor: "pointer" }}></i>
+            <i
+              className="far fa-trash-alt"
+              onClick={this.onDeleteUser}
+              style={{ cursor: "pointer" }}
+            ></i>
           </div>
           {isVisible ? (
             <div className="card-body">
@@ -59,13 +51,6 @@ class User extends Component {
           ) : null}
         </div>
       </div>
-      // <div>
-      //   <ul>
-      //     <li>Name : {name} <i className="far fa-trash-alt"></i></li>
-      //     <li>Departman : {departmant}</li>
-      //     <li>Salary : {salary}</li>
-      //   </ul>
-      // </div>
     );
   }
 }
@@ -73,6 +58,7 @@ User.propTypes = {
   name: PropTypes.string.isRequired,
   departmant: PropTypes.string.isRequired,
   salary: PropTypes.string.isRequired,
+  deleteUser: PropTypes.func.isRequired,
 };
 // create default props
 // User.defaultProps = {
