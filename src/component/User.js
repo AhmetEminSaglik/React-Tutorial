@@ -20,8 +20,8 @@ class User extends Component {
     console.log(e);
   };
   onDeleteUser = (e) => {
-    const { id, deleteUser } = this.props;
-    deleteUser(id);
+    const { id} = this.props;
+    //Consumer Dispatch
   };
   render() {
     const { name, departmant, salary } = this.props;
@@ -58,7 +58,6 @@ User.propTypes = {
   name: PropTypes.string.isRequired,
   departmant: PropTypes.string.isRequired,
   salary: PropTypes.string.isRequired,
-  deleteUser: PropTypes.func.isRequired,
 };
 // create default props
 // User.defaultProps = {

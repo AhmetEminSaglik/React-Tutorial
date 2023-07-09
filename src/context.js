@@ -22,7 +22,13 @@ export class UserProvider extends Component {
         id: 3,
         name: "Omer Netbeans",
         departmant: "Web Developer",
-        salary: "3750$",
+        salary: "3750$", 
+      },
+      {
+        id: 4,
+        name: "Eren Ural",
+        departmant: "no information available",
+        salary: "no information available", 
       },
     ],
   };
@@ -30,7 +36,8 @@ export class UserProvider extends Component {
   render() {
     return (
       <UserContext.Provider value={this.state}>
-        {this.props.children}
+         {this.props.children} 
+         {/* here can be thought of like <App/>*/}
       </UserContext.Provider>
     );
   }
@@ -38,4 +45,4 @@ export class UserProvider extends Component {
 
 const UserConsumer = UserContext.Consumer;
 
-export default UserContext;
+export default UserConsumer;
