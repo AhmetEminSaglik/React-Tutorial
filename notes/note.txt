@@ -32,3 +32,24 @@
 
   
   onClick={this.OnClickEvent.bind(this, 34) // this must be added to first index
+
+
+
+ -> Create Context API :
+ 1-)
+  const UserContext = React.createContext();
+  export class UserProvider extends Component {
+    state= {...}
+    render(){
+      return(
+        <UserContext.Provider value={this.state}>
+         {this.props.children} 
+      </UserContext.Provider>
+      )
+    }
+    }
+
+const UserConsumer = UserContext.Consumer;
+
+export default UserConsumer;
+
