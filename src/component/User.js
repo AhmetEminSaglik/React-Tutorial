@@ -27,11 +27,18 @@ class User extends Component {
           const { dispatch } = value;
           return (
             <div className="col-md-8 mb-4">
-              <div className="card">
+              <div
+                className="card"
+                style={
+                  isVisible
+                    ? { background: "#3ba9e6", color: "white" }
+                    : { background: "#66cccc" }
+                }
+              >
                 <div className="card-header d-flex justify-content-between">
                   <h4
                     className="d-inline"
-                    onClick={this.onDeleteUser.bind(this, 34)}
+                    onClick={this.OnClickEvent.bind(this, 34)}
                   >
                     {name}
                   </h4>
