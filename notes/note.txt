@@ -65,3 +65,5 @@ export default UserConsumer;
 
  -> Reducer : 
  updates state according to Action type that is send with Dispatch  
+
+ -> lifecycle : Constructor, render, componentDidMount, render
